@@ -45,14 +45,14 @@ function App() {
 
     const dataId = useRef(0);
     // CREATE
-    const onCreate = (date, content, emotion) => {
+    const onCreate = (date, content, intelligibility) => {
         dispatch({
             type: "CREATE",
             data: {
                 id: dataId.current,
                 date: new Date(date).getTime(),
                 content,
-                emotion,
+                intelligibility,
             },
         });
         dataId.current += 1;
@@ -64,14 +64,14 @@ function App() {
     };
 
     // EDIT
-    const onEdit = (targetId, date, content, emotion) => {
+    const onEdit = (targetId, date, content, intelligibility) => {
         dispatch({
             type: "EDIT",
             data: {
                 id: targetId,
                 date: new Date(date).getTime(),
                 content,
-                emotion,
+                intelligibility,
             },
         });
     };
@@ -83,7 +83,6 @@ function App() {
             >
                 <BrowserRouter>
                     <div className="App">
-                        <h2>App.js</h2>
                         <Routes>
                             <Route path="/" element={<Home />} />
                             <Route path="/new" element={<New />} />
