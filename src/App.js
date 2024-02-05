@@ -4,12 +4,20 @@ import Home from "./pages/Home";
 import New from "./pages/New";
 import Edit from "./pages/Edit";
 import Diary from "./pages/Diary";
-import RouteTest from "./components/RouteTest";
+import MyButton from "./components/MyButton";
+import MyHeader from "./components/MyHeader";
+
+// COMPOENETS
 
 function App() {
     return (
         <BrowserRouter>
             <div className="App">
+                <MyHeader
+                    headText={"App"}
+                    leftChild={<MyButton text={"<"} onClick={() => {}} />}
+                    rightChild={<MyButton text={">"} onClick={() => {}} />}
+                />
                 <h2>App.js</h2>
                 <Routes>
                     <Route path="/" element={<Home />} />
@@ -17,8 +25,9 @@ function App() {
                     <Route path="/diary" element={<Diary />} />
                     <Route path="/edit" element={<Edit />} />
                 </Routes>
-
-                <RouteTest />
+                <MyButton text={"버튼"} type={"positive"} />
+                <MyButton text={"버튼"} type={"negative"} />
+                <MyButton text={"버튼"} type={"default"} />
             </div>
         </BrowserRouter>
     );
