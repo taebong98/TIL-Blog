@@ -1,12 +1,14 @@
 @font-face {
-    @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+    font-family: "BMJUA";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
+        format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
 
-    .notosanskr * {
-        font-family: "Noto Sans KR", sans-serif;
-    }
-
-    font-family: "BMYEONSUNG";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMYEONSUNG.woff")
+@font-face {
+    font-family: "GmarketSansMedium";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
         format("woff");
     font-weight: normal;
     font-style: normal;
@@ -17,7 +19,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Noto Sans KR";
+    font-family: "BMJUA";
     min-height: 100vh;
     margin: 0px;
 }
@@ -60,7 +62,7 @@ body {
     font-size: 18px;
 
     word-spacing: nowrap;
-    font-family: "Noto Sans KR";
+    font-family: "BMJUA";
 }
 
 .MyButton_default {
@@ -109,7 +111,7 @@ header .head_btn_right {
 }
 
 header button {
-    font-family: "Noto Sans KR";
+    font-family: "BMJUA";
 }
 
 /* DiaryEditor */
@@ -137,14 +139,35 @@ header button {
     cursor: pointer;
 
     font-size: 15px;
-    font-family: "Noto Sans KR";
+    font-family: "BMJUA";
 }
 
-/* Diary Editor */
 .DiaryEditor .intelligibility_list_wrapper {
     display: grid;
     grid-template-columns: repeat(5, auto);
     gap: 2%;
+}
+
+.DiaryEditor textarea {
+    font-family: "GmarketSansMedium";
+    font-size: 14px;
+
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 200px;
+    resize: vertical;
+
+    border: none;
+    border-radius: 5px;
+    background-color: #ececec;
+
+    padding: 20px;
+}
+
+.DiaryEditor .control_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* Intel Item */
@@ -167,7 +190,7 @@ header button {
 
 .IntelItem span {
     font-size: 14px;
-    font-family: "Noto Sans KR";
+    font-family: "BMJUA";
 }
 
 .IntelItem_off {
