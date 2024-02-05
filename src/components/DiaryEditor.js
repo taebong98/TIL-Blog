@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
+import { DiaryDispatchContext } from "../App";
 
 import MyHeader from "./MyHeader";
 import MyButton from "./MyButton";
@@ -43,6 +44,9 @@ const DiaryEditor = () => {
     const [intel, setIntel] = useState(3);
     const [date, setDate] = useState(getStringDate(new Date()));
 
+    const { onCreate } = useContext(DiaryDispatchContext);
+    const navigate = useNavigate();
+
     const handleClickIntel = (intel) => {
         setIntel(intel);
     };
@@ -52,9 +56,11 @@ const DiaryEditor = () => {
             contentRef.current.focus();
             return;
         }
+
+        onCreate(date, content, intel);
+        navigate("/", { replace: true });
     };
 
-    const navigate = useNavigate();
     return (
         <div className="DiaryEditor">
             <MyHeader
