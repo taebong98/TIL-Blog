@@ -1,0 +1,113 @@
+@font-face {
+    @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+    .notosanskr * {
+        font-family: "Noto Sans KR", sans-serif;
+    }
+
+    font-family: "BMYEONSUNG";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMYEONSUNG.woff")
+        format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Noto Sans KR";
+    min-height: 100vh;
+    margin: 0px;
+}
+
+/* 650px 이상일때 아래 규칙 적용 */
+@media (min-width: 650px) {
+    .App {
+        width: 640px;
+    }
+}
+
+@media (max-width: 650px) {
+    .App {
+        width: 90vw;
+    }
+}
+
+#root {
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.App {
+    min-height: 100vh;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* MyButton */
+.MyButton {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+
+    font-size: 18px;
+
+    word-spacing: nowrap;
+    font-family: "Noto Sans KR";
+}
+
+.MyButton_default {
+    background-color: #ececec;
+    color: black;
+}
+
+.MyButton_positive {
+    background-color: #64c964;
+    color: white;
+}
+
+.MyButton_negative {
+    background-color: #fd565f;
+    color: white;
+}
+
+/* HEADER */
+header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+header > div {
+    display: flex;
+}
+
+header .head_text {
+    width: 50%;
+    font-size: 25px;
+    justify-content: center;
+}
+
+header .head_btn_left {
+    width: 25%;
+    justify-content: start;
+}
+
+header .head_btn_right {
+    width: 25%;
+    justify-content: end;
+}
+
+header button {
+    font-family: "Noto Sans KR";
+}
