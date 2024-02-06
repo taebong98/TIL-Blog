@@ -11,16 +11,15 @@ const Edit = () => {
     const tilList = useContext(DiaryStateContext);
 
     useEffect(() => {
-        if (tilList.length >= 1) {
-            const targetTil = tilList.find(
-                (it) => parseInt(it.id) === parseInt(id)
-            );
+        const targetTil = tilList.find(
+            (it) => parseInt(it.id) === parseInt(id)
+        );
 
-            if (targetTil) {
-                setOriginDate(targetTil);
-            } else {
-                navigate("/", { replace: true });
-            }
+        if (targetTil) {
+            setOriginDate(targetTil);
+        } else {
+            alert("없는 TIL 입니다.")
+            navigate("/", { replace: true });
         }
     }, [id, tilList]);
 
