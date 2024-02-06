@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import New from "./pages/New";
 import Edit from "./pages/Edit";
-import Diary from "./pages/Diary";
+import Detail from "./pages/Detail";
 
 const reducer = (state, action) => {
     let newState = [];
@@ -43,7 +43,7 @@ export const DiaryDispatchContext = React.createContext();
 function App() {
     const [data, dispatch] = useReducer(reducer, []);
 
-    const dataId = useRef(0);
+    const dataId = useRef(1);
     // CREATE
     const onCreate = (date, content, intelligibility) => {
         dispatch({
@@ -86,7 +86,7 @@ function App() {
                         <Routes>
                             <Route path="/" element={<Home />} />
                             <Route path="/new" element={<New />} />
-                            <Route path="/diary" element={<Diary />} />
+                            <Route path="/detail" element={<Detail />} />
                             <Route path="/edit" element={<Edit />} />
                         </Routes>
                     </div>
