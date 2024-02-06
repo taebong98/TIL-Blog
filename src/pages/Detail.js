@@ -56,11 +56,22 @@ const Detail = () => {
                 <article>
                     <section>
                         <h4>이해도</h4>
-                        <div className="til_img_wrapper">
+                        <div
+                            className={[
+                                "detail_img_wrapper",
+                                `detail_img_wrapper_${data.intelligibility}`,
+                            ].join(" ")}
+                        >
                             <img src={currentIntelData.intel_img} />
-                            <div className="til_decript">
+                            <div className="detail_decript">
                                 {currentIntelData.intel_descript}
                             </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h4>TIL 상세</h4>
+                        <div className="til_content_wrapper">
+                            <p>{data.content}</p>
                         </div>
                     </section>
                 </article>
