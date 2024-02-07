@@ -76,12 +76,10 @@ const Home = () => {
                     />
                 }
             />
-            <h4>{data.length}개의 TIL가 있습니다.</h4>
             <div>
                 
             </div>
             <TilList tilList={tilList} />
-            <RouteTest />
         </div>
     );
 };

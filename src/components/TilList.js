@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MyButton from "./MyButton";
 import { useNavigate } from "react-router-dom";
 import TilItem from "./TilItem";
@@ -14,7 +14,11 @@ const filterOptionList = [
     { value: "bad", name: "이해 못한 내용만" },
 ];
 
-const ControlMenu = ({ value, onChange, optionList }) => {
+const ControlMenu = React.memo(({ value, onChange, optionList }) => {
+    useEffect(() => {
+        console.log("Control menu");
+    });
+
     return (
         <select
             className="ControlMenu"
@@ -28,7 +32,7 @@ const ControlMenu = ({ value, onChange, optionList }) => {
             ))}
         </select>
     );
-};
+});
 
 const TilList = ({ tilList }) => {
     const navigate = useNavigate();
