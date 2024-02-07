@@ -13,7 +13,11 @@ const Detail = () => {
     const navigate = useNavigate();
     const [data, setDate] = useState();
 
-    
+    useEffect(() => {
+        const titleElement = document.getElementsByTagName("title")[0];
+        titleElement.innerHTML = `TIL 기록 - ${id}`;
+    }, []);
+
     useEffect(() => {
         const targetTil = tilList.find(
             (it) => parseInt(it.id) === parseInt(id)

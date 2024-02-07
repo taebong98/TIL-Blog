@@ -11,6 +11,11 @@ const Edit = () => {
     const tilList = useContext(DiaryStateContext);
 
     useEffect(() => {
+        const titleElement = document.getElementsByTagName("title")[0];
+        titleElement.innerHTML = `${id}번 TIL 수정`;
+    });
+
+    useEffect(() => {
         const targetTil = tilList.find(
             (it) => parseInt(it.id) === parseInt(id)
         );
@@ -18,7 +23,7 @@ const Edit = () => {
         if (targetTil) {
             setOriginDate(targetTil);
         } else {
-            alert("없는 TIL 입니다.")
+            alert("없는 TIL 입니다.");
             navigate("/", { replace: true });
         }
     }, [id, tilList]);
