@@ -3,7 +3,6 @@ import { DiaryStateContext } from "../App";
 
 import MyHeader from "../components/MyHeader";
 import MyButton from "../components/MyButton";
-import RouteTest from "../components/RouteTest";
 import TilList from "../components/TilList";
 
 const Home = () => {
@@ -76,10 +75,7 @@ const Home = () => {
                     />
                 }
             />
-            <div>
-                
-            </div>
-            <TilList tilList={tilList} />
+            <TilList tilList={data} />
         </div>
     );
 };

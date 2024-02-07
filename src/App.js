@@ -51,12 +51,11 @@ function App() {
             const tilList = JSON.parse(localData).sort((a, b) =>
                 parseInt(b.id - a.id)
             );
-            dataId.current = parseInt(tilList[0].id + 1);
 
-            console.log(tilList);
-            console.log(dataId);
-
-            dispatch({ type: "INIT", data: tilList });
+            if (tilList.length >= 1) {
+                dataId.current = parseInt(tilList[0].id + 1);
+                dispatch({ type: "INIT", data: tilList });
+            } 
         }
     }, []);
 
