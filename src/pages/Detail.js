@@ -13,8 +13,7 @@ const Detail = () => {
     const navigate = useNavigate();
     const [data, setDate] = useState();
 
-    console.log(id);
-
+    
     useEffect(() => {
         const targetTil = tilList.find(
             (it) => parseInt(it.id) === parseInt(id)

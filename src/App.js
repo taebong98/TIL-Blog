@@ -1,4 +1,4 @@
-import React, { useReducer, useRef } from "react";
+import React, { useEffect, useReducer, useRef } from "react";
 
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -11,7 +11,7 @@ import Detail from "./pages/Detail";
 const reducer = (state, action) => {
     let newState = [];
     switch (action.type) {
-        case "INTE": {
+        case "INIT": {
             return action.data;
         }
         case "CREATE": {
@@ -34,6 +34,8 @@ const reducer = (state, action) => {
         default:
             return state;
     }
+
+    localStorage.setItem("til", JSON.stringify(newState));
     return newState;
 };
 
@@ -42,6 +44,21 @@ export const DiaryDispatchContext = React.createContext();
 
 function App() {
     const [data, dispatch] = useReducer(reducer, []);
+    useEffect(() => {
+        const localData = localStorage.getItem("til");
+
+        if (localData) {
+            const tilList = JSON.parse(localData).sort((a, b) =>
+                parseInt(b.id - a.id)
+            );
+            dataId.current = parseInt(tilList[0].id + 1);
+
+            console.log(tilList);
+            console.log(dataId);
+
+            dispatch({ type: "INIT", data: tilList });
+        }
+    }, []);
 
     const dataId = useRef(1);
     // CREATE
