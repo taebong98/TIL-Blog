@@ -12,8 +12,8 @@ const Edit = () => {
 
     useEffect(() => {
         const titleElement = document.getElementsByTagName("title")[0];
-        titleElement.innerHTML = `${id}번 TIL 수정`;
-    });
+        titleElement.innerHTML = `TIL 기록 - ${id}번 TIL 수정`;
+    }, []);
 
     useEffect(() => {
         const targetTil = tilList.find(
