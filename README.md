@@ -1,5 +1,5 @@
 # 프로젝트 소개
-URL: https://taebong-til.web.app
+https://taebong-til.web.app
 
 TIL-Blog는 이름 그대로 오늘 학습한 내용을 기록하는 웹 애플리케이션입니다.
 
